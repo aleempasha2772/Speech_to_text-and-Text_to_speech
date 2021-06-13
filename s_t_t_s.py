@@ -35,7 +35,7 @@ def SpeakText(command):
 with sr.Microphone() as source:
     print("Talk")
     audio_text = r.listen(source)
-    print("Time over, thanks")
+    print("getting processed...")
 # recoginize_() method will throw a request error if the API is unreachable, hence using exception handling
     
     try:
@@ -52,13 +52,25 @@ with sr.Microphone() as source:
         #SpeakText(mytext)
         out = "doing boss"
         out1 = "on process boss"
+        out2 = "hi aleem and mohit"
         if(mytext == "get up"):
             SpeakText(out)
             print("the voice :",out)
         elif(mytext == "do it"):
             SpeakText(out1)
             print("the voice is:",out1)
-            
+        
+        elif(mytext == "Ric"):
+            SpeakText(out2)
+            print("the voice is:",out2) 
+        #elif(mytext == "fuck"):
+            SpeakText("fuck you")       
+            print("fuck you")
+        else:
+            SpeakText(mytext)
+            print("the voice in to String is",mytext)
+         
+        
     except:
          b = print("Sorry, I did not get that")
          print(b)
